@@ -15,27 +15,34 @@ The configuration below is for a test environment burndown. Only a free micro EC
 Airflow does not support running over windows server. Here, an Linux Instance should be initiated for setup.
 Step 1: Select Launch Instance
 Pick up Ubuntu server: 18.04LTS (Pre-installed python3.6)
-![Image](/Images/Step 1.png)
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Step%201.png)
 
 Step 2: Choose an instance type
 Free t2 Micro for testing environment. Normally, a moderate will be required for running large scaled data pipeline jobs. Click on Configure Instance Details.
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Step%202.png)
 
 
 Step 3: Configure Instance Details
 Auto-Assign Public IP = Enabled to access through public network. Pick subnet if this instance need to be assign to same subnet work with other instances.
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Step%203.png)
 
 
 Step 4: Add Storage
 It is free to increase the instance storage to 20 GB.
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Step%204.png)
 
 Step 5: Add Tags
 Name for each resources type for easy management.
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Step%205.png)
 
 Step 6: Configure Security Group
 To allow console access and internet access to the airflow webserver. SSH access using My IP address – console access. Customer TCP Rule with port range 8080 –airflow UI access through public IP. 
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Step%206.png)
 
 Step 7: preview and lunch through windows
 Create a private key file which is required to obtain the password used to login into the EC2 instance. And without the file, the instance won’t be able to be accessed.
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Step%207%20Download%20Key%20Pairs.png)
+
 
 EC Instance Access PuTTY
 PuTTY and PuTTYGen will be used to access EC2 instance via private key file on downloaded above through windows OS. Both are open source free SSH client. More details, see the guide https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html.
