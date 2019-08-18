@@ -15,6 +15,7 @@ The configuration below is for a test environment burndown. Only a free micro EC
 Airflow does not support running over windows server. Here, an Linux Instance should be initiated for setup.
 Step 1: Select Launch Instance
 Pick up Ubuntu server: 18.04LTS (Pre-installed python3.6)
+![Image](/Images/Step 1.png)
 
 Step 2: Choose an instance type
 Free t2 Micro for testing environment. Normally, a moderate will be required for running large scaled data pipeline jobs. Click on Configure Instance Details.
