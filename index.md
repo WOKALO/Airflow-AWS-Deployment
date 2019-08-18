@@ -1,4 +1,12 @@
 ## Airflow AWS Deployment
+Airflow is a platform to programmatically author, schedule and monitor workflows.
+Main components will be installed and configured are
+- Webserver
+- Scheduler
+- Workers
+- Shared File System
+- Queue
+- Metadb
 
 ### EC2 Configuration
 The configuration below is for a test environment burndown. Only a free micro EC2 instance initiated and the drawbacks are memory limitation which cannot start airflow webserver, scheduler, and worker services in the same time. 
