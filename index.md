@@ -71,16 +71,14 @@ Check database connection info and modify the configuration and the port is 5432
 
 Open pg_hba.conf with the path showing above using vi (text editor) and change the ipv4 address to 0.0.0.0/0 and the ipv4 connection method from md5 (password) to trust which allow no password access Postgres database (About vi).
 Quick vi notes: i - insert and change, esc - temp commit changes, :w - save to file, :q - quit
-step 6
+![](https://raw.githubusercontent.com/WOKALO/Airflow-AWS-Deployment/master/Images/Psql%20Step%206.png)
 
 Configure the postgresql.conf file to open the listen address to all ip addresses, listen_addresses = '*'
 Quick vi notes: /search for search the characters to locate the configuration.
-step 7
-
+![](https://raw.githubusercontent.com/WOKALO/Airflow-AWS-Deployment/master/Images/Psql%20Step%207.png)
 
 Start Postgres SQL Service
-Step 8
-
+![](https://raw.githubusercontent.com/WOKALO/Airflow-AWS-Deployment/master/Images/Psql%20Step%208.png)
 And any time modify the connection information, reload the postgresql service required: sudo service postgresql reload (reload postgres settings without restart the service).
 
 ### Airflow Installation
