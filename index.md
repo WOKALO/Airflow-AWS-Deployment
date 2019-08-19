@@ -55,6 +55,36 @@ This section includes
 - Replace direct access with RBAC to allow role based access control.
 - Additional settings to optimize the airflow.
 
+### Postgres SQL Installation
+Update existing software package list on the instance.
+![](https://raw.githubusercontent.com/WOKALO/Airflow-AWS-Deployment/master/Images/Psql%20Step%201.png)
+
+Setup Postgres as backend database.
+![](https://raw.githubusercontent.com/WOKALO/Airflow-AWS-Deployment/master/Images/Psql%20Step%202.png)
+
+Create metadata database for airflow backend
+![](https://raw.githubusercontent.com/WOKALO/Airflow-AWS-Deployment/master/Images/Psql%20Step%203.png)
+
+Check database connection info and modify the configuration and the port is 5432.
+![](https://raw.githubusercontent.com/WOKALO/Airflow-AWS-Deployment/master/Images/Psql%20Step%204.png)
+![](https://raw.githubusercontent.com/WOKALO/Airflow-AWS-Deployment/master/Images/Psql%20Step%205.png)
+
+Open pg_hba.conf with the path showing above using vi (text editor) and change the ipv4 address to 0.0.0.0/0 and the ipv4 connection method from md5 (password) to trust which allow no password access Postgres database (About vi).
+Quick vi notes: i - insert and change, esc - temp commit changes, :w - save to file, :q - quit
+![](https://raw.githubusercontent.com/WOKALO/Airflow-AWS-Deployment/master/Images/Psql%20Step%206.png)
+
+Configure the postgresql.conf file to open the listen address to all ip addresses, listen_addresses = '*'
+Quick vi notes: /search for search the characters to locate the configuration.
+![](https://raw.githubusercontent.com/WOKALO/Airflow-AWS-Deployment/master/Images/Psql%20Step%207.png)
+
+Start Postgres SQL Service
+![](https://raw.githubusercontent.com/WOKALO/Airflow-AWS-Deployment/master/Images/Psql%20Step%208.png)
+And any time modify the connection information, reload the postgresql service required: sudo service postgresql reload (reload postgres settings without restart the service).
+
+### Airflow Installation
+
+
+
 You can use the [editor on GitHub](https://github.com/WOKALO/aad.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
