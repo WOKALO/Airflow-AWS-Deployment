@@ -86,10 +86,10 @@ sudo service postgresql reload
 
 ### Airflow Installation
 Setup home directory for AIRFLOW_HOME default folder will be created as airflow. (Optional as an environment variable)</br>
-step 1
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Airflow_Step1.png)
 
 Install pip3 python package installer</br>
-step 2
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Airflow_Step2.png)
 
 After installing these dependencies, we can install airflow and its packages. (You can modify these packages depending on need. Celery and RabbitMQ are needed to use the Web-based GUI)</br>
 ```
@@ -100,7 +100,7 @@ sudo apt-get install libsasl2-dev (dependency for airflow[hive] package)
 sudo pip3 install apache-airflow[async,devel,celery,crypto,druid,gcp_api,jdbc,hdfs,hive,kerberos,ldap,password,postgres,qds,rabbitmq,s3,samba,slack]
 ```
 Setup first-time configurations </br>
-step 3
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Airflow_Step3.png)
 
 Backup configurations</br>
 ```
@@ -111,19 +111,18 @@ Use vi to change following configurations. Replace SequentialExecutor to CeleryE
 ```
 sudo vi airflow.cfg
 ```
-step 4
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Airflow_Step4.png)
 
 Change sql_alchemy_conn to postgresql+psycopg2://ubuntu@localhost:5432/airflow.</br>
-Step 5
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Airflow_Step5.png)
 
 Change broker_url and result_backend under [celery] section.</br>
-step 6
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Airflow_Step6.png)
 
 Install pyamqp connection driver.</br>
 ```
 pip3 install pyamqp
 ```
-
 Recommit airflow changes.
 ```
 airflow initdb
@@ -133,14 +132,14 @@ Resolve the warning usage of psycopg2.
 sudo pip3 install psycopg2-binary
 airflow initdb
 ```
-Step 7
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Airflow_Step7.png)
 
 Test airflow webserver, create multiple screen or session to monitoring the process.
 ```
 airflow webserver
 ```
-Step 8
-Go to web UI, EC2 public ip:8080. Then ctrl + c to stop the service. 
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Airflow_Step8.png)
 
-Step 9
+Go to web UI, EC2 public ip:8080. Then ctrl + c to stop the service. 
+![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Airflow_Step9.png)
 
