@@ -152,14 +152,18 @@ Change the configuration file /etc/rabbitmq/rabbitmq-env.conf, and make a copy b
 
 To create a user, run:
 ```airflow initdb
-sudo airflow create_user -r Admin -u Admin -f Admin -l Admin -e Admin@hqz.com -p Abcd1234*```
-
+sudo airflow create_user -r Admin -u Admin -f Admin -l Admin -e Admin@hqz.com -p Abcd1234*
+```
 ### Additional Configurations
 By default, Airflow will try to backfill jobs that it may have missed. This is not the desired behavior. 
 catchup_by_default = False
-```sudo service rabbitmq-server start```
+```
+sudo service rabbitmq-server start
+```
 Check celery if it is already installed by 
-```pip3 freeze | grep celery```
+```
+pip3 freeze | grep celery
+```
 
 ### RBAC configuration
 There are five roles created for Airflow by default: Admin, User, Op, Viewer, and Public. The master branch adds beta support for DAG level access for RBAC UI. Each DAG comes with two permissions: read and write.
