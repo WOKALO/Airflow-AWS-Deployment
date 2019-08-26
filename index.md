@@ -117,6 +117,8 @@ Change sql_alchemy_conn to postgresql+psycopg2://ubuntu@localhost:5432/airflow.<
 ![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Airflow_Step5.png)
 
 Change broker_url and result_backend under [celery] section.</br>
+result_backend=db+postgresql+psycopg2://ubuntu@localhost:5432/airflow
+
 ![](https://github.com/WOKALO/Airflow-AWS-Deployment/blob/master/Images/Airflow_Step6.png)
 
 Install pyamqp connection driver.</br>
