@@ -151,14 +151,6 @@ RabbitMQ is a message broker. Its job is to manage communication between multipl
 sudo apt-get install rabbitmq-server
 ```
 Change the configuration file /etc/rabbitmq/rabbitmq-env.conf, and make a copy before change the file. Configuration need to be updated is NODE_IP_ADDRESS=0.0.0.0 and start the service.
-
-To create a user, run:
-```airflow initdb
-sudo airflow create_user -r Admin -u Admin -f Admin -l Admin -e Admin@hqz.com -p Abcd1234*
-```
-### Additional Configurations
-By default, Airflow will try to backfill jobs that it may have missed. This is not the desired behavior. 
-catchup_by_default = False
 ```
 sudo service rabbitmq-server start
 ```
@@ -166,9 +158,16 @@ Check celery if it is already installed by
 ```
 pip3 freeze | grep celery
 ```
-
 ### RBAC configuration
 There are five roles created for Airflow by default: Admin, User, Op, Viewer, and Public. The master branch adds beta support for DAG level access for RBAC UI. Each DAG comes with two permissions: read and write.
 
 To enable authorized access, the following settings need to be updated under airflow.cfg. 
 
+To create a user, run:
+```airflow initdb
+sudo airflow create_user -r Admin -u Admin -f Admin -l Admin -e Admin@hqz.com -p Abcd1234*
+```
+
+### Additional Configurations
+By default, Airflow will try to backfill jobs that it may have missed. This is not the desired behavior. 
+catchup_by_default = False
